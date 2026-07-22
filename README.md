@@ -491,9 +491,3 @@ python3 ctl.py block ads.example.com
 | Port 5335 already in use | `sudo ss -ulnp \| grep 5335` to find what's holding it. |
 | Proxy fails to bind with "Address already in use" on port 5353 | This is why the proxy uses 5335 by default — `avahi-daemon` binds `0.0.0.0:5353` on most desktop Linux installs. If `LISTEN_PORT` is changed back to 5353, either stop avahi-daemon or pick a different port. |
 | Database locked errors | Both the proxy and dashboard use WAL mode so they can read/write concurrently; this shouldn't happen under normal use. If it does, check nothing else is holding an open transaction on `data/adblock.db`. |
-
----
-
-*For the shorter, checklist-style version of installation, see
-[README.md](https://github.com/Pegasus-01/dns-pihole-adblock/blob/main/README.md)
-in the repository.*
