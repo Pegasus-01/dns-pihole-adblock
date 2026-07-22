@@ -1,0 +1,16 @@
+[Unit]
+Description=Ad-Block DNS Proxy (SQLite-backed)
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/opt/adblock
+ExecStart=/opt/adblock/venv/bin/python3 proxy.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
